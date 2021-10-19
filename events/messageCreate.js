@@ -2,7 +2,7 @@ const { beanEmojiId, calls, clientId } = require('../config.json');
 
 module.exports = {
     name: 'messageCreate',
-    execute(msg) {
+    async execute(msg) {
         if (msg.author.bot) { return; } // Housekeeping
 
         if (msg.mentions.has(msg.client.user)) { msg.react(msg.guild.emojis.cache.get(beanEmojiId)); } // React with bean when mentioned (improved from Python!)
