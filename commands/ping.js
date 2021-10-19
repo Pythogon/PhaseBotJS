@@ -15,6 +15,6 @@ module.exports = {
                     .setStyle("SECONDARY")
                     .setEmoji("<:Phaser:719532394419585108>")
             );
-        inter.reply({ content: "Pong!", components: [row], fetchReply: true});
+        inter.reply({ content: "Pong!", components: [row], fetchReply: true, ephemeral: true });
     },
 };

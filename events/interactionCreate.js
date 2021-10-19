@@ -14,10 +14,7 @@ module.exports = {
             }
         }
         if (inter.isButton()) { 
-            if (inter.customId === "pingbutton") {
-                console.log("a");
-                inter.reply({content: "Phaser is pleased.", ephemeral: true});
-            }
+            if (inter.customId === "pingbutton") { inter.reply({ content: "Phaser is pleased.", ephemeral: true }); }
         }
     }
 }
