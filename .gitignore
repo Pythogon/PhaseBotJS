@@ -105,3 +105,4 @@ dist
 
 # Config files
 config.json
+local_memory/
