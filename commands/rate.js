@@ -15,12 +15,13 @@ module.exports = {
         const user = inter.options.getUser("target");
         if (!user) user = inter.user; 
         let uD = ReadUserData(user.id);   
+        let fields = [];
 
         if (!uD.rate) {
             uD.rate = Math.floor((Math.random()*5)+1);
             WriteUserData(user.id, uD);
-            let fields = [`Nobody's asked me about ${user.username} before! Let's have a look...`, "Calculating..."];
-        } else let fields = [`Someone's already asked about ${user.username}. One moment...`, "Fetching..."];
+            fields = [`Nobody's asked me about ${user.username} before! Let's have a look...`, "Calculating..."];
+        } else fields = [`Someone's already asked about ${user.username}. One moment...`, "Fetching..."];
 
         loadingEmbed = new MessageEmbed()
             .setColor(embedColor)
