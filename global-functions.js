@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { version } = require('./package.json');
 
 function FetchFooter() {
     randomFooters = {
@@ -20,7 +21,7 @@ function FetchFooter() {
         16: "with unintentional help from distopioid!",
         17: "to cultivate psychedelic cacti - not for consumption (for legal reasons)" // Thanks cool tomato
     } 
-    return randomFooters[Math.floor((Math.random()*17)+1)]
+    return `PhaseBot JSv${version} | Made by Pythogon Technologies ${randomFooters[Math.floor((Math.random()*17)+1)]}`
 }
 
 function ReadUserData(user) { 
@@ -29,8 +30,9 @@ function ReadUserData(user) {
     if(user in all_user_data) return all_user_data[user];
     return all_user_data["default"];
 }
+
 function WriteUserData(user, data) { 
-    let raw_data = fs.writeFileSync("./local_memory/userdata.json");
+    let raw_data = fs.readFileSync("./local_memory/userdata.json");
     let all_user_data = JSON.parse(raw_data);
     all_user_data[user] = data;
     let data_to_write = JSON.stringify(all_user_data);
@@ -44,7 +46,7 @@ function ReadGlobalVariable(variable) {
 }
 
 function WriteGlobalVariable(variable, data) {
-    let raw_data = fs.writeFileSync("./local_memory/globaldata.json");
+    let raw_data = fs.readFileSync("./local_memory/globaldata.json");
     let all_global_data = JSON.parse(raw_data);
     all_global_data[variable] = data;
     let data_to_write = JSON.stringify(all_global_data);
