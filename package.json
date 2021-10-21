@@ -1,6 +1,6 @@
 {
   "name": "phasebot",
-  "version": "0.0.2-alpha",
+  "version": "0.0.2.1-alpha",
   "description": "JS port of github.com/Pythogon/PhaseBot",
   "main": "index.js",
   "scripts": {
